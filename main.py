@@ -860,5 +860,4 @@
 
 # print(dir())  # None
 
-
-hello dibil
+print("Vitaju svit!")  # Vitaju svit!
