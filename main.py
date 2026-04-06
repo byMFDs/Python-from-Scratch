@@ -957,7 +957,12 @@
 # print(not not {})
 
 
-my_list = [1, 2, 3]
+# my_list = [1, 2, 3]
 
-if len(my_list) > 0:
-    print("List is not empty!")
+# if len(my_list) > 0:
+#     print("List is not empty!")
+
+
+# Логические операторы:
+
+# not,and,or
