@@ -963,6 +963,144 @@
 #     print("List is not empty!")
 
 
-# Логические операторы:
+# Логические операторы и операторы короткого замыкания:
 
 # not,and,or
+
+# and:
+# Выражение 1 and Выражение 2
+# Если Выражение 1 ложно, возвращается его значение. Иначе возвращается значение Выражения 2.
+# Если выражение 1 истинно, возвращается его значение. Иначе возвращается значение Выражения 2.
+
+# Цепочка операторов and и or:
+# a and b and c and d
+# a or b or c or d
+# a or b and c or d
+
+
+# my_list = [1, 2]
+
+# other_list = ["a", "b"]
+
+# print(len(my_list) < 0 or other_list)
+
+
+# my_list = [1, 2]
+
+# my_dict = {}
+
+# print(my_list and my_dict)
+
+
+# my_list = [1, 2]
+
+# my_list and print("List is not empty!")
+
+
+# my_dict1 = {"key": "value"}
+# my_dict2 = {"key": "value"}
+
+# my_dict1, my_dict2 and print("Both dictionaries are not empty!")  # True
+
+
+# # 1. Створюємо два однакові словники
+# dict1 = {"key": "value"}
+# dict2 = {"key": "value"}
+
+# # 2. Перевіряємо умови:
+# #    а) вони однакові (dict1 == dict2)
+# #    б) вони не порожні (and dict1)
+# if dict1 == dict2 and dict1:
+#     print("Both dictionaries are not empty!")
+
+
+# Оператор расспаковки словаррей:
+
+# button = {
+#     "width": "200",
+#     "text": "By now"
+# }
+
+# red_button = {
+#     **button,
+#     "color": "red",
+# }
+
+# print(red_button)  # {'width': '200', 'text': 'By now', 'color': 'red'}
+# print(button)  # {'width': '200', 'text': 'By now'}
+
+
+# button_info = {
+#     "width": "200",
+#     "text": "By now"
+# }
+
+# button_style = {
+#     "price": "2000",
+#     "model": "B300",
+#     "name": "kirill",
+#     "color": "red",
+# }
+
+# buttom = button_info | button_style
+
+# # {'width': '200', 'text': 'By now', 'color': 'red'}
+# print(buttom)  # {'width': '200', 'text': 'By now'}
+
+
+# button_info = {
+#     "width": "200",
+#     "text": "By now"
+# }
+
+# button_style = {
+#     "price": "2000",
+#     "model": "B300",
+#     "name": "kirill",
+#     "color": "red",
+# }
+
+# buttom = {**button_info, **button_style}
+
+# # {'width': '200', 'text': 'By now', 'color': 'red'}
+# print(buttom)  # {'width': '200', 'text': 'By now'}
+
+
+# del - это оператор в Python, который используется для удаления объектов. Он может удалять переменные, элементы из списков, ключи из словарей и даже целые объекты. Когда объект удаляется с помощью del, он становится недоступным и освобождает память, которую он занимал. Однако, если на объект все еще есть ссылки, он не будет удален до тех пор, пока все ссылки не будут удалены.
+
+
+# Удаляет ключ "key" из словаря my_dict. Если ключа нет, вызывает KeyError.
+# del my_dict["key"]
+
+
+# my_dict = {"a": True, "b": False}
+# # Удаляет ключ "another_key" из словаря my_dict. Если ключа нет, вызывает KeyError.
+# del my_dict["a"]
+# # Удаляет ключ "key" из словаря my_dict. Если ключа нет, вызывает KeyError.
+# my_dict.__delitem__("b")
+
+# print(my_dict)  # {}
+
+# print(my_dict.__delitem__)
+
+
+# my_list = [1, 2, 3, 4, 5]
+
+# del my_list[0]  # Удаляет элемент с индексом 0 из списка my_list
+
+# my_list.__delitem__(0)  # Удаляет элемент с индексом 0 из списка my_list
+
+# print(my_list)  # [2, 3, 4, 5]
+
+
+# Оператор + для соединения строк:
+
+# "Hello " + "Python"  # Конкатенация строк, результат: "Hello Python"
+
+
+# hello = "Hello "
+# world = "World"
+
+# # Конкатенация строк, результат: "Hello World"
+# greeting = f"{hello}{world}!"
+# print(greeting.title())  # Hello World
