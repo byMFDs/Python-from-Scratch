@@ -1104,3 +1104,191 @@
 # # Конкатенация строк, результат: "Hello World"
 # greeting = f"{hello}{world}!"
 # print(greeting.title())  # Hello World
+
+
+# Лямбда функции:
+
+# lambda arguments: expression
+
+# def mult(a ,b): - обычная функция
+#     return a * b
+
+
+# lambda a,b: a * b - лямбда функция
+
+
+# def mult(a, b):
+#     return a * b
+
+
+# def mult(a, b): return a * b
+
+
+# print(mult(10, 5))  # 50
+
+
+# Обработка ошибок:
+
+# print(10 / 0)  # ZeroDivisionError: division by zero
+
+
+# try:
+#     # Код, который может вызвать ошибку(выполнение блока кода)
+#     pass
+# except ErrorType:
+#     # Код, который выполняется при возникновении ошибки (ErrorType - это тип ошибки, которую мы хотим обработать)
+#     pass
+
+
+# try:
+#     print("10" / 0)  # ZeroDivisionError: division by zero
+
+# except ZeroDivisionError as e:
+#     print("You can't divide by zero!")  # You can't divide by zero!
+#     print(type(e))  # <class 'ZeroDivisionError'>
+#     # print(dir(e))
+#     # print(e.__str__())  # division by zero
+#     print(e)
+# except TypeError as e:
+#     print("Type error occurred!")  # Type error occurred!
+#     print(e)
+# else:
+#     print("No errors occurred!")  # No errors occurred!
+
+# print("Program continues...")  # Program continues...
+
+
+# finally - это блок кода, который выполняется после блока try и всех блоков except, независимо от того, была ли ошибка или нет. Он используется для выполнения действий, которые должны быть выполнены в любом случае, например, закрытие файлов, освобождение ресурсов или выполнение других завершающих операций. Блок finally гарантирует, что определенный код будет выполнен, даже если в блоке try возникнет исключение.
+
+# try:
+#     print(10 / 5)
+# except ZeroDivisionError as e:
+#     print(e)
+# except TypeError as e:
+#     print(e)
+# else:
+#     print("There was no errors!")
+
+# finally:
+#     print("Program continues...")
+
+
+# isinstance - это встроенная функция в Python, которая используется для проверки, является ли объект экземпляром определенного класса или кортежа классов. Она принимает два аргумента: объект, который нужно проверить, и класс или кортеж классов, с которым нужно сравнить объект. Функция возвращает True, если объект является экземпляром указанного класса или кортежа классов, и False в противном случае.
+# Exception - это базовый класс для всех встроенных исключений в Python. Он служит основой для создания пользовательских исключений и обработки ошибок. Когда возникает ошибка, Python создает объект исключения, который содержит информацию о типе ошибки и ее сообщении. Исключения могут быть перехвачены и обработаны с помощью блоков try-except, что позволяет программе продолжать выполнение даже при возникновении ошибок.
+# object - это базовый класс для всех объектов в Python. Все классы и типы данных в Python являются наследниками класса object. Это означает, что все объекты в Python имеют общие методы и атрибуты, которые определены в классе object. Например, все объекты имеют метод __str__(), который возвращает строковое представление объекта, и метод __eq__(), который используется для сравнения объектов на равенство. Класс object также предоставляет базовую функциональность для создания новых классов и объектов в Python.
+
+# try:
+#     print(10 / 0)  # ZeroDivisionError: division by zero
+# except ZeroDivisionError as e:
+#     print(isinstance(e, ZeroDivisionError))  # True
+#     print(isinstance(e, Exception))  # True
+#     print(e)
+# except TypeError as e:
+#     print(e)
+
+# print("Program continues...")
+
+
+# try:
+#     print(10 / 0)  # ZeroDivisionError: division by zero
+# except:
+#     print("An error occurred!")  # An error occurred!
+
+
+# def divide(a, b):
+#     if b == 0:
+#         raise TypeError("Second argument cannot be zero!")
+#     return a / b
+
+
+# def check_admin(user_id):
+#     if user_id != 123:
+#         raise PermissionError(
+#             "You don't have permission to access this resource!")
+
+
+# try:
+#     check_admin(456)
+# except PermissionError as e:
+#     # You don't have permission to access this resource!
+#     print(f"Bot said:{e}")
+
+
+# try:
+#     print(10 / 0)  # ZeroDivisionError: division by zero
+# except ZeroDivisionError:
+#     print("Хтось намагався поділити на нуль. Фіксую...")
+#     raise  # Помилка летить далі
+
+
+# def divide(a, b):
+#     if b == 0:
+#         raise ValueError("Second argument cannot be zero!")
+#     return a / b
+
+
+# try:
+#     divide(10, 0)  # TypeError: Second argument cannot be zero!
+# except ZeroDivisionError as e:
+#     print(e)
+# except ValueError as e:
+#     print(e)  # Second argument cannot be zero!
+
+
+# print("Program continues...")
+
+
+# D/Z:
+
+# bad code:
+# def image_info(user_data: dict):
+#     the_dict = f"Image {user_data['image_title']} has id {user_data['image_id']}."
+#     return the_dict
+
+
+# image_data = {
+#     "image_title": "Sunset",
+#     "image_id": 12345
+# }
+
+
+# try:
+#     print(image_info(image_data))
+#     raise KeyError("Missing key in user_data!")
+# except KeyError as e:
+#     print(f"Missing key in user_data: {e}")
+
+#     else:
+#         print("No errors occurred!")
+
+# finally:
+#     print("Program continues...")
+
+
+# good code:
+def image_info(dict):
+    if ("image_id" not in dict) or ("image_title" not in dict):
+        raise KeyError("Missing key in user_data!")
+    the_dict = f"Image {dict['image_title']} has id {dict['image_id']}."
+    return the_dict
+
+
+image_data = {
+    "image_title": "Sunset",
+    "image_id": 12345
+}
+
+
+try:
+    print(image_info(image_data))
+
+except KeyError as e:
+    print(f"Missing key in user_data: {e}")
+except TypeError as e:
+    print(e)
+
+else:
+    print("No errors occurred!")
+
+finally:
+    print("Program continues...")
