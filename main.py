@@ -1452,3 +1452,20 @@
 
 # for user_data in the_list:
 #     print(func(**user_data))
+
+
+# #Unusable code:
+# #
+
+# from openai import OpenAI
+
+# client = OpenAI()
+
+# user_promt = input("Prompt: ")
+
+# response = client.responses.create(
+#     input=user_promt,
+#     model="gpt-5"
+# )
+
+# print(response.output_text)
