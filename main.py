@@ -1874,3 +1874,160 @@
 
 # while Условие:
 # Блок кода выполняемый на каждой итерации
+
+# i = 10
+
+# while i < 50:
+#     print(i)
+#     i += 10
+
+
+# while True:
+#     answer = input("Enter yes or no: ")
+#     if answer == "no":
+#         break
+
+
+# import random
+
+# random_num = random.randint(1, 5)
+
+# while True:
+#     num = int(input("Guess the number I choose from 1 to 5: "))
+#     if num != random_num:
+#         print("Try again...")
+#         continue #Продалжает цикл с начала пока значенние не будет исстиным
+#     print("Congratulations!", random_num)
+#     break #Заканчиваем цыкл
+
+
+# D/Z:
+
+# while True:
+#     try:
+#         answer1 = float(input("Enter first number: \n"))
+#         answer2 = float(input("Enter secound number: \n"))
+#     except ValueError as e:
+#         print(e)
+#         print("You must enter only a numbers!")
+#         continue
+
+
+#     print(answer1 / answer2)
+
+#     main_q = str(input("Do you want to continue? \n"))
+#     if main_q == "yes":
+#         continue
+#     print("THX for the game!")
+#     break
+
+
+# Сокращенный цыкл for in:
+
+# Выраженние for Элемент in Последовательность
+
+# abs - вазвражает всегда число без знака "-"(вазвражает абсолютное число)
+# print(abs(-10))   # Виведе: 10
+# print(abs(3.14))  # Виведе: 3.14
+# print(abs(-0.5))  # Виведе: 0.5
+
+
+# Обычный for in
+# all_nums = [-3, 1, 0, 10, -20, 5]
+
+# absolute_nums = []
+
+# for num in all_nums:
+#     absolute_nums.append(abs(num))
+
+# print(absolute_nums)
+
+# print(all_nums)
+
+
+# #Сакращеный for in
+
+# all_nums = [-3, 1, 0, 10, -20, 5]
+
+# absolute_nums = [abs(num) for num in all_nums]
+
+# print(absolute_nums)
+
+# print(all_nums)
+
+
+# # Обычный for in
+# all_nums = [-3, 1, 0, 10, -20, 5]
+
+# absolute_nums = []
+
+# for num in all_nums:
+#     if num > 0:
+#         absolute_nums.append(abs(num))
+
+# print(absolute_nums)
+
+# print(all_nums)
+
+
+# Сакращеный for in
+
+# all_nums = [-3, 1, 0, 10, -20, 5]
+
+# absolute_nums = [num for num in all_nums if num > 0]
+
+# print(absolute_nums)
+
+# print(all_nums)
+
+
+# Формирование нового набора в обычном for in
+
+# my_set = {1, 10, 15}
+# new_set = set()
+
+# for value in my_set:
+#     new_set.add(value * value)
+
+# print(new_set)
+
+# print(my_set)
+
+# Сокращенный for in для наборов(set)
+
+# my_set = {1, 10, 15}
+
+# new_set = {value * value for value in my_set}
+
+# print(new_set)
+
+# print(my_set)
+
+
+# Формирование нового словаря в обычном for in
+
+# my_scores = {
+#     "a": 10,
+#     "b": 7,
+#     "m": 14
+# }
+
+# scores = {}
+
+# for key, value in my_scores.items():
+#     scores[key] = value * 10
+
+#     print(scores)
+
+#     print(my_scores)
+
+
+# enumerate() - Функція `enumerate()` автоматично додає порядковий номер (індекс)\
+#  до кожного елемента списку під час його перебору в циклі.
+
+
+my_scores = [10, 7, 14]
+
+scores = {index: element for index, element in enumerate(my_scores)}
+
+print(scores)
