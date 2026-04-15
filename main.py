@@ -2026,8 +2026,69 @@
 #  до кожного елемента списку під час його перебору в циклі.
 
 
-my_scores = [10, 7, 14]
+# my_scores = [10, 7, 14]
 
-scores = {index: element for index, element in enumerate(my_scores)}
+# scores = {index: element for index, element in enumerate(my_scores)}
 
-print(scores)
+# print(scores)
+
+
+# D/Z:
+
+# 1)
+
+# new_dict = {}
+
+# the_dict = {
+#     "key_1": "value_1",
+#     "key_2": "value_2",
+#     "key_3": "value_3"
+# }
+
+# for key, value in the_dict.items():
+#     new_dict[key] = value.upper()
+
+# print(new_dict)
+
+
+# 2)
+
+# the_list = ["Daniel", "Andriy", 14, True, "Kiril"]
+
+# new_list = []
+
+# for element in the_list:
+#     if type(element) == str and len(element) > 3:
+#         new_list.append(element)
+
+# print(new_list)
+# print(the_list)
+
+
+# Генераторы в for in
+
+# nums = (3, 5, 10)
+
+# squeres = (num * num for num in nums)
+
+# print(squeres)
+# print(type(squeres))
+
+
+# nums = [3, 5, 10]
+
+# gen = (num * num for num in nums)
+
+# squeres = tuple(gen)
+
+# print(squeres)
+
+# print(type(squeres))
+
+
+from sys import getsizeof
+
+squeres_gen = (num * num for num in range(10000))
+
+print(getsizeof(squeres_gen))
+print(type(squeres_gen))
