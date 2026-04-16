@@ -2066,6 +2066,7 @@
 
 
 # Генераторы в for in
+# генератор нужен для экономии места в памяти пк
 
 # nums = (3, 5, 10)
 
@@ -2086,9 +2087,69 @@
 # print(type(squeres))
 
 
-from sys import getsizeof
+# from sys import getsizeof
 
-squeres_gen = (num * num for num in range(10000))
+# squeres_gen = (num * num for num in range(10000))
 
-print(getsizeof(squeres_gen))
-print(type(squeres_gen))
+# print(getsizeof(squeres_gen)) #104
+# print(type(squeres_gen))
+
+
+# from sys import getsizeof
+
+# squeres_gen = [num * num for num in range(10000)]
+
+# print(getsizeof(squeres_gen))#85176
+# print(type(squeres_gen))
+
+# nums = [3, 5, 10]
+
+# generator = (num * num for num in nums)
+
+# squares = tuple(generator)
+
+# print(squares)
+# print(type(squares))
+
+
+# Классы/Classes и Обьекты/Objects:
+
+
+# class Car:
+#     def move(self):
+#         print("Car is moving")
+
+#     def stop(self):
+#         print("Car stopped")
+
+
+# my_car = Car()
+# my_second_car = Car()
+# print(type(my_car))
+# print(isinstance(my_car, Car))
+# my_car.move()
+# my_car.stop()
+# print(my_car)
+# print(type(my_car))
+# print(isinstance(my_car, Car))
+# print(isinstance(my_car, object))
+
+# Car.move(my_car) or my_car.move()
+
+
+# class Comment:
+#     def __init__(self, text):
+
+#         self.text = text
+#         self.votes_qty = 0
+
+#     def upvote(self):
+#         self.votes_qty += 1
+
+
+# first_comment = Comment("First comment")
+
+# print(first_comment.text)
+# print(first_comment.votes_qty)
+# print(first_comment.__dict__)
+# print(dir(first_comment))
