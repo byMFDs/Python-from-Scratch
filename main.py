@@ -2155,30 +2155,30 @@
 # print(dir(first_comment))
 
 
-class Comment:
-    def __init__(self, text, initial_votes_qty=0):
-        self.text = text
-        self.votes_qty = initial_votes_qty
+# class Comment:
+#     def __init__(self, text, initial_votes_qty=0):
+#         self.text = text
+#         self.votes_qty = initial_votes_qty
 
-    def upvote(self, number):
-        self.votes_qty += number
+#     def upvote(self, number):
+#         self.votes_qty += number
 
-    def reset_votes_qty(self):
+#     def reset_votes_qty(self):
 
-        self.votes_qty = 0
-
-
-my_comment = Comment("My comment")
+#         self.votes_qty = 0
 
 
-print(my_comment.votes_qty)
-my_comment.upvote(10)
-my_comment.upvote(20)
+# my_comment = Comment("My comment")
 
-print(my_comment.votes_qty)
-my_comment.reset_votes_qty()
 
-print(my_comment.votes_qty)
+# print(my_comment.votes_qty)
+# my_comment.upvote(10)
+# my_comment.upvote(20)
+
+# print(my_comment.votes_qty)
+# my_comment.reset_votes_qty()
+
+# print(my_comment.votes_qty)
 
 
 # print(my_comment.text)
@@ -2199,3 +2199,85 @@ print(my_comment.votes_qty)
 # sec_comment = Comment("Secound comment")
 # sec_comment.upvote(2)
 # print(sec_comment.votes_qty)
+
+
+# class Image:
+#     def __init__(self, resolution, title, extension):
+#         self.resolution = resolution
+#         self.title = title
+#         self.extension = extension
+
+#     def resize(self, new_resolution):
+#         self.resolution = new_resolution
+
+#     def __str__(self):
+#         return f"{self.title}.{self.extension}"
+
+
+# my_image = Image("1980*1080", "my_dog", "JPG")
+# my_lost_image = Image("1280*720", "my_cat", "JPG")
+# first_image = Image("2560*1440", "my_delphi", "JPEG")
+# new_image = Image("3840*2160", "my_squrill", "PNG")
+
+
+# my_image.resize("5120*2160")
+# print(my_image.resolution)
+
+# print(my_image.title)
+
+# print(my_image.extension)
+
+# print(my_image)
+
+
+# class Comment:
+#     def __init__(self, text):
+#         self.text = text
+#         self.votes_qty = 0
+
+#     def upvote(self):
+#         self.votes_qty += 1
+
+
+# # my_comment = Comment("My comment")
+
+# first_comment = Comment("My First Comment BTW")
+# second_comment = Comment("My Second Comment BTW")
+
+# # print(Comment)
+# # print(object)
+
+# # print(isinstance(first_comment, Comment)) # True
+# # print(isinstance(first_comment, object)) #True
+
+# # first_comment.upvote()# +1
+# # print(first_comment.votes_qty)
+
+# # first_comment.upvote()# +2
+# # print(first_comment.votes_qty)
+
+# # first_comment.upvote()# +3
+# # print(first_comment.votes_qty)
+
+# print(first_comment.text)
+# print(second_comment.text)
+
+
+# @staticmethod
+
+class Comment:
+    def __init__(self, text):
+        self.text = text
+
+    @staticmethod
+    def merge_comments(first, second):
+        return f"{first} {second}!"
+
+
+my_comment = Comment("My Comment")
+
+m1 = Comment.merge_comments("Thx", "Excellent!")
+print(m1)
+
+m2 = my_comment.merge_comments("Great", "OK!")
+print(m2)
