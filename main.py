@@ -2285,35 +2285,96 @@
 
 # Магические методы в классах:
 
-class Comment:
-    def __init__(self, text):
-        self.text = text
-        self.votes_qty = 0
+# class Comment:
+#     def __init__(self, text):
+#         self.text = text
+#         self.votes_qty = 0
 
-    def upvote(self):
-        self.votes_qty += 1
+#     def upvote(self):
+#         self.votes_qty += 1
 
-    def __add__(self, other):
-        return {
-            "text": f"{self.text} {other.text}",
-            "total_qty": self.votes_qty + other.votes_qty
-        }
-        # return [f"{self.text} {other.text}", self.votes_qty + other.votes_qty]
-        # return f"{self.text} {other.text}", self.votes_qty + other.votes_qty
+#     def __add__(self, other):
+#         return {
+#             "text": f"{self.text} {other.text}",
+#             "total_qty": self.votes_qty + other.votes_qty
+#         }
+#         # return [f"{self.text} {other.text}", self.votes_qty + other.votes_qty]
+#         # return f"{self.text} {other.text}", self.votes_qty + other.votes_qty
 
-    def __eq__(self, another):
-        # Вчимо Пайтон: два коментарі рівні, якщо в них однаковий текст І однакові лайки
-        return self.text == another.text and self.votes_qty == another.votes_qty
-
-
-first_comment = Comment("First comment btw")
-first_comment.upvote()  # +1
-
-second_comment = Comment("First comment btw")
-second_comment.upvote()  # +2
+#     def __eq__(self, another):
+#         # Вчимо Пайтон: два коментарі рівні, якщо в них однаковий текст І однакові лайки
+#         return self.text == another.text and self.votes_qty == another.votes_qty
 
 
-# {'text': 'First comment btw Second comment btw', 'total_qty': 2}
-# print(first_comment + second_comment)
+# first_comment = Comment("First comment btw")
+# first_comment.upvote()  # +1
 
-print(first_comment == second_comment)
+# second_comment = Comment("First comment btw")
+# second_comment.upvote()  # +2
+
+
+# # {'text': 'First comment btw Second comment btw', 'total_qty': 2}
+# # print(first_comment + second_comment)
+
+# print(first_comment == second_comment)
+
+
+# Наследование из других классов:
+
+
+# class Backpack:
+#     def __init__(self, owner_name, items):
+#         self.owner_name = owner_name
+#         self.items = items
+
+#     def __str__(self):
+#         return f"Backpacks name is {self.owner_name} and Items are {self.items}"
+
+
+# my_backpack = Backpack("Danylo", ["ball", "fork", "pencil"])
+# print(my_backpack)
+
+
+# Подкалассы
+
+# class ExtendedList(list):
+#     def print_list_info(self):
+#         print(f"List has {len(self)} elements")
+
+
+# class MyExtendedList(ExtendedList):
+#     def print_list_info(self):
+#         print(f"List has {len(self)} elements")
+
+
+# custom_list = ExtendedList([3, 5, 2])
+# print(ExtendedList.__subclasses__())
+
+
+# class User:
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email
+
+
+# class AdminUser(User):
+#     def __init__(self, username, email, role):
+#         super().__init__(username, email)
+
+#         self.roel = role
+#         self.is_admin = True
+
+
+# my_admin = AdminUser("admin123", "admin@gmail.com", "Administration")
+# print(my_admin)
+# print(type(my_admin))
+# print(isinstance(my_admin, AdminUser))
+# print(isinstance(my_admin, User))
+# print(isinstance(my_admin, object))
+# print(my_admin.__dict__)
+
+# my_user = User("bob321", "bob@gmail.com")
+# print(my_user.__dict__)
+
+# print(User.__subclasses__())
+# print(object.__subclasses__)
