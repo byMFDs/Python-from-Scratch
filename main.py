@@ -2575,3 +2575,60 @@
 #     def processed_payment(self):
 #         #Code to process PayPal payment
 #         pass
+
+
+# Декораторы:
+
+
+# def decorator_func(original_func):
+#     def wrapper_func(*args, **kwargs):
+#         # Some actions before execution of the original_func
+#         print("Executed before function")
+
+#         result = original_func(*args, **kwargs)
+
+#         # Some actions after execution of the original_func
+#         print("Executed after function")
+
+#         return result
+
+#     return wrapper_func
+
+
+# @decorator_func
+# def my_func(a, b):
+#     print("This is my Function!")
+#     return (a, b)
+
+
+# result = my_func(100, 50)
+# print(result)
+
+
+def log_func_call(original_fn):
+    def wrapper(*args, **kwargs):
+        print(f"Function name is {original_fn.__name__}")
+        print(f"Function arguments are: {args}, {kwargs}")
+        result = original_fn(*args, **kwargs)
+        print(f"Function result: {result}")
+        return result
+
+    return wrapper
+
+
+@log_func_call
+def main(a, b):
+    return a * b
+
+
+print(main(2, 5))
+
+print('')
+
+
+@log_func_call
+def mult(a, b):
+    return a + b
+
+
+print(mult(a=40.3, b=20.7))
