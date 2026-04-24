@@ -2661,7 +2661,6 @@
 # def is_user_auth():
 #     return True
 
-
 # def check_user_auth(fn):
 #     def wrapper(*args, **kwargs):
 
@@ -2686,3 +2685,109 @@
 #     do_sensetive_job()
 # except Exception as e:
 #     print(e)
+
+
+# Mодули:
+
+
+# import other as other_module
+
+# print(other_module.print_sum(5, 2))
+
+
+# from other import my_name, print_sum as sum
+
+# print(sum(5, 2))
+# print(my_name)
+
+# from other import *
+
+# print(print_sum(5, 2))
+# print(my_name)
+
+
+# __main__ and __name__
+
+
+# print(dir())
+# print(__name__)
+# print(__name__ == "__main__")
+
+
+# from other import my_fn
+
+# print("main.py", __name__)
+# print("main.py", __name__ == '__main__')
+
+
+# Встроенные модули:
+
+# os smtplib pprint time zipfile calendar sys csv regex math random statistics
+
+# help()
+
+# print(help("modules"))
+# print(help("csv"))
+# print(help("calendar"))
+
+
+# import math
+
+# print(math.pi)
+# print(math.pow(5, 7))
+
+# print(dir(math))
+# print(type(math))
+
+
+# Создание пакетов:
+
+
+# import package.other_module
+
+# print(package.other_module.a)
+
+# from package.one_module import my_name
+
+# my_name("Danya")
+
+
+# JSON - формат обмена данными и формат файлов
+
+# json.loads() - конвертация JSON в словарь
+# json.dumps() - конвертация словаря в JSON
+
+# import json
+
+# json_str = '{"id":235, "brand": "Nike", "qty":84, "status": {"isForSale":true}}'
+
+# sneakers = json.loads(json_str)
+
+# print(type(sneakers)) # <class 'dict'>
+
+# print(sneakers['brand'])   # Nike
+# print(sneakers['qty'])     # 84
+# print(sneakers['status']['isForSale']) # True
+
+
+# import json
+
+# json_str = '{"id":235, "brand": "Nike", "qty":84, "status": {"isForSale":true}}'
+
+# sneakers = json.loads(json_str)
+
+# json_from_dict = json.dumps(sneakers, indent=5)
+
+# print(json_from_dict)
+# print(type(json_from_dict))
+
+
+# D/Z:
+
+import json
+
+json_file = {"Brand": "Tesla", "model": "X", "qty": 10_000, "isForSale": True}
+
+cars_json = json.dumps(json_file, indent=5)
+
+print(cars_json)
