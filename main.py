@@ -2784,10 +2784,175 @@
 
 # D/Z:
 
-import json
+# import json
 
-json_file = {"Brand": "Tesla", "model": "X", "qty": 10_000, "isForSale": True}
+# json_file = {"Brand": "Tesla", "model": "X", "qty": 10_000, "isForSale": True}
 
-cars_json = json.dumps(json_file, indent=5)
+# cars_json = json.dumps(json_file, indent=5)
 
-print(cars_json)
+# print(cars_json)
+
+
+# Работа с файлами:
+
+# from os import path
+
+# print(path.abspath("."))
+# print(type(path))
+
+
+# from pathlib import Path
+
+# print(Path(".").absolute())
+# print(type(Path))
+
+
+# from pathlib import Path
+
+# file_path = Path("text.txt")
+
+# print([m for m in dir(file_path) if not m.startswith("_")])
+
+
+# from pathlib import Path
+
+# print(Path.cwd()) - показывает в какой я сейчас папке нахожусь
+
+
+# Формирование путей на Mac и UNIX
+# from pathlib import Path
+# print(Path("usr").joinpath("local").joinpath("bin"))
+# print(Path("usr") / "local" / "bin")
+
+# Формирование путей на Windows
+
+# from pathlib import Path
+
+# print(Path("C:/").joinpath("Users").joinpath("danya"))
+# print(Path("C:/") / "Users" / "danya")
+
+
+# Проверка присутсвия директиории или файлa .exists()
+
+# from pathlib import Path
+
+# print(Path("main.py").exists())
+# # True
+
+# print(Path("/Users/danya/Desktop").exists())
+# # False
+# print(Path("other.py").exists())
+# # False
+
+
+# Директория или файл?
+# .is_file()
+
+# from pathlib import Path
+
+# print(Path("main.py").is_file())
+
+# print(Path("../python").is_file())
+
+# print(Path("../python").is_file())
+
+
+# Какие папки и файлы есть в опредиленой директории .iterdir()
+# Path("директория")
+
+# from pathlib import Path
+
+# for f in Path("../../../..").iterdir():
+#     print(f)
+
+# for f in Path(".").iterdir():
+#     print(f)
+
+# for f in Path("/").iterdir():
+#     print(f)
+
+
+# Работа с путями к файлам и директориям:
+
+# from os import path
+
+# # print(path.curdir) - путь к текущей папке
+
+# print(path.abspath("."))
+
+
+# from pathlib import Path
+
+# # print(type(Path))
+# cwd = Path("/home").joinpath("mfd").joinpath("Visual Studio Code").joinpath("django")
+
+# if not cwd.exists():
+#     cwd.mkdir()
+
+# if cwd.exists():
+#     cwd.rmdir()
+
+
+# print(cwd.mkdir()) - создание папки(django например)
+
+
+# print(cwd.exists()) - есть ли такая папка на моем ПК
+# print(cwd.is_dir()) - папка ли это вообще?
+# print(cwd.absolute()) - абсолютный путь к текущей папке(/home/mfd/Visual Studio Code)
+# print(dir(cwd))
+# print(cwd)
+# print(isinstance(cwd, Path))
+# print(type(cwd))
+# print(Path.__subclasses__)
+
+
+# from pathlib import Path
+
+# print(Path("C:/").joinpath("Users").joinpath("danya"))#C:/Users/danya
+
+# print(Path("C:/") / "Users" / "dyadya_bogdan")#C:/Users/dyadya_bogdan
+
+
+# from pathlib import Path
+
+# print(type(Path(".")))
+
+# print(Path(".").cwd()) - где я сейчас нахожусь(/home/mfd/Visual Studio Code)
+
+
+# Чтение и запись файлов(with):
+
+# "r" - читать
+# "w" - писать
+# "a" - добавлять
+# "x" - создавать
+
+
+# with open("test.txt") as test_file:
+#     print(test_file.read())  # - прочитать весь файл
+
+# with open("test.txt") as test_file:
+#     print(test_file.readlines())  # - прочитать все строчки файла файла и вернуть список
+
+
+# with open("test.txt", "w") as test_file:
+#     test_file.write("Im not World -_-\n")
+
+# with open("test.txt") as test_file:
+#     print(test_file.read()) #Im not World -_-
+
+
+# with open("test.txt", "a") as test_file:
+#     test_file.write("Ok Im World :)\n")
+
+# with open("test.txt") as test_file:
+#     print(test_file.read())# Im not World -_- Ok Im World :)
+
+
+# from pathlib import Path
+
+# print(Path("test.txt").exists()) - есть ли файл вообще?
+
+# Path("test.txt").unlink() - уничножает файл test.txt
+
+# print(Path("test.txt").exists())
