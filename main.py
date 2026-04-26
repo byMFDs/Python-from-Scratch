@@ -2956,3 +2956,83 @@
 # Path("test.txt").unlink() - уничножает файл test.txt
 
 # print(Path("test.txt").exists())
+
+
+# Худший вариант
+# test_file = open("test.txt", "w")
+
+# test_file.write("First string\n")
+# test_file.write("Second string\n")
+
+# test_file.close()  # close a file
+# test_file = open("test.txt")
+# print(test_file.read())
+
+
+# Лучший вариант
+# with open("test.txt", "w") as test_file:
+#     test_file.write("First string\n")
+#     test_file.write("Second string\n")
+
+# with open("test.txt", "r") as test_file:
+#    print(test_file.read())
+
+
+# with open("test.txt", "w") as test_file:
+#     test_file.write("First string\n")
+#     test_file.write("Second string\n")
+#     test_file.write("Third string\n")
+
+# with open("test.txt", "r") as test_file:
+#     while True:
+#         line = test_file.readline()
+#         print(line)
+#         if not line:
+#             break
+
+# with open("test.txt", "r") as test_file:
+#     lines = test_file.readlines()
+#     for line in lines:
+#         print(line)
+
+# OR
+
+# with open("test.txt", "r") as test_file:
+#     for line in test_file:
+#         print(line)
+
+
+# Удаление файлов:
+
+# from pathlib import Path
+
+# file = open("test.txt", "w") - создает файл
+# file.close()
+
+# my_file = Path("test.txt")
+
+# if my_file.exists():
+#     my_file.unlink() - удаляет файл
+
+
+# D/Z:
+
+# import shutil
+# from pathlib import Path
+
+# first_path = Path("Python") / "files" / "first.txt"
+# second_path = Path("Python") / "files" / "second.txt"
+# my_folder = Path("Python") / "files"
+
+# with open(first_path, "r") as first_file:
+#     print(first_file.readlines())
+
+# with open(second_path, "r") as second_file:
+#     lines = second_file.readlines()
+#     for line in lines:
+#         print(line)
+
+# first_path.unlink()
+# second_path.unlink()
+
+# shutil.rmtree(my_folder)
